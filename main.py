@@ -13,9 +13,12 @@ album = tag.album
 artist = tag.artist
 title = tag.title
 
-def playSong():
+def play():
     print(('Now Playing: %s -- %s, %s') % (title, artist, album))
     playsound(filepath)
 
-playSong()
-
+while True:
+    print('enter \'play\' to play, \'pause\' to pause, or \'skip\' to skip:')
+    choice = input()
+    if choice == 'play':
+        play()

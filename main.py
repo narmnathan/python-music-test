@@ -1,5 +1,6 @@
 import os, glob, tinytag, playsound
 # to-do: introduce play/pause/skip functionality, save user_playlist to file ?
+# to-do: sort out pygame mp3 functionality
 
 class User:
     default_path = os.path.expanduser('~/Music')

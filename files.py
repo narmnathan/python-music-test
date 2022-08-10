@@ -20,12 +20,15 @@ class fileSystem:
             print(directory)
         user_choice = input('[1] to set directory, [2] to import files, [3] to exit \n')
         if user_choice == '1':
+            os.system('clear')
             self.chdir()
         elif user_choice == '2':
             if not directory:
                 print('no mp3 files to import... \n')
+                os.system('clear')
                 self.listdir()
             else:
+                os.system('clear')
                 self.file_import()
         else:
             print('exiting...')
@@ -38,16 +41,19 @@ class fileSystem:
         # change later
         while True:
             if os.path.isdir(user_choice) is True:
+                os.system('clear')
                 self.dir = user_choice
                 os.chdir(self.dir)
                 self.listdir()
                 break
             elif os.path.isdir('%s/%s' % (self.dir, user_choice)) is True:
+                os.system('clear')
                 self.dir = '%s/%s' % (self.dir, user_choice)
                 os.chdir(self.dir)
                 self.listdir()
                 break
             else:
+                os.system('clear')
                 print('invalid input. \n')
                 self.chdir()
                 break
@@ -64,8 +70,8 @@ class fileSystem:
             for index in glob.glob(self.dir + '/*.mp3'):
                 tag = tinytag.TinyTag.get(index)
                 self.songs[tag.title] = index
-            return self.songs
-        print('success!')
+                os.system('clear')
+                print('success!')
         # ideally this will import all files to user's Songs list
 
 
